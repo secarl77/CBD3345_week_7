@@ -22,6 +22,7 @@ jobs:
         settings-path: ${{ github.workspace }}
 
     - name: Publish to GitHub Packages
+      working-directory: springboot-utils
       run: mvn deploy --settings ${{ github.workspace }}/settings.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
